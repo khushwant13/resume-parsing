@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+{% load active %}
+{% load crispy_forms_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/Services.css' %}">
+
+    <title>Services</title>
+</head>
+<body>
+    <script>window.onload=function(){
+        const toggleButton = document.getElementsByClassName('toggle-button')[0]
+        const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+        
+        toggleButton.addEventListener('click', () => {
+          navbarLinks.classList.toggle('active')
+        })
+        }
+        </script>
+{% include 'navbar.html' %}
+    <div class="flex-containe">
+        <h1>Services</h1>
+    </div>
+    <div class="two-containe">
+      <div class="first-containe">
+
+        <h3>----------------
+          ----------------<br>
+        
+        </h3>
+          <p> this website offers a product that evaluates a user’s resume and/or online professional profile and provides guidance on how to optimize the content and layout to better increase your chances of passing through applicant tracking system filters and searches as well as increase your online visibility and enhance your overall job search.
+            resume filtering does not support any payment methods, currencies or locations for payment. because this is completely free.
+          </p>
+      </div>
+    
+      <div class="second-containe">
+          <h3>----------------
+            ----------------<br>
+         
+          </h3>
+        <p> We may use your content that you have uploaded or provided through the site (excluding personal passwords or contact information), including resume information, career history, educational history, reviews, responses, profile entries, forum posts, questions, career materials, as well as any communications or other materials delivered by you to resume filtering </div>
+</div>
+    </body>
+{% include 'footer.html' %}
+
+</html>

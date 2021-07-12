@@ -1,0 +1,116 @@
+<!doctype html>
+{% load static %}
+{% load active %}
+{% load crispy_forms_tags %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Facebook Cards -->
+    <meta property="og:image" content="{% static 'images/logomark.png' %}"/>
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:image:src" content="{% static 'images/logomark.png' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/logomarkv2.ico' %}">
+    <script>window.onload=function(){
+const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+}
+</script>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body style="font-family: 'Poppins', sans-serif;">
+    {% include 'navbar.html' %}
+    <div class="container-fluid">
+      {% include 'messages.html' %}
+    
+      {% if form %}
+      <div class="text-container">
+        <img class="container-image" src="{% static 'images/4.png' %}">
+        <div class="container-text">
+          <h2>What is resume parsing?</h2>
+          <p> A resume parser is a program or software application that analyzes a resume or cover letter data and turns it into a structured format so it can be sorted and processed as a way to speed up the interviewing and hiring process.</p>
+          <p>Recruiters use resume parsing to create a far more convenient and efficient resume and application screening process. Resume parsing helps recruiters out in a huge way. This technology allows recruiters to electronically gather, store and organize the information contained in resumes or applications.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 col-md-5"></div>
+        <div class="col-lg-6 col-md-6">
+          <form method="POST" enctype="multipart/form-data" action="{% url 'homepage' %}" >
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" id="import" name="import" class="btn btn-success" style="margin-top:2%"  >Upload</button>
+          </form>
+        </div>
+      </div>
+      
+    
+      {% elif resumes %}
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <a href="{% url 'homepage' %}">
+              <button class="btn btn-success">Upload More</button>
+            </a>
+        </div>
+      </div>        
+          <table class="table table-bordered table-striped table-responsive">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Resume File</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Education</th>
+                <th>Company Names</th>
+                <th>Designation</th>
+                <th>College</th>
+                <th>Total Experience in years</th>
+                <th>Skills</th>
+                <th>Experience</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for resume in resumes %}
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td><a href="{{resume.resume.url}}" target="_blank">{{resume.resume.url|truncatechars:20}}</a></td>
+                  <td>{{resume.name}}</td>
+                  <td>{{resume.email}}</td>
+                  <td>{{resume.mobile_number}}</td>
+                  <td>{{resume.education}}</td>
+                  <td>{{resume.company_names}}</td>
+                  <td>{{resume.designation}}</td>
+                  <td>{{resume.college}}</td>
+                  <td>{{resume.total_experience}}</td>
+                  <td>{{resume.skills}}</td>
+                  <td>{{resume.experience}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      
+      {% endif %}
+    </div>
+  
+  </body>
+
+</html>
+{% include 'footer.html' %}

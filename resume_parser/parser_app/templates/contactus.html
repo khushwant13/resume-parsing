@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+{% load active %}
+{% load crispy_forms_tags %}
+{% include 'navbar.html' %}
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Facebook Cards -->
+    <meta property="og:description" content="A fun project to store my learning from each book that I read"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content="{% static 'images/logomark.png' %}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Bookworm"/>
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:image:src" content="{% static 'images/logomark.png' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="text/css" media="all" />
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/logomarkv2.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/feedback.css' %}"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>ContactUs</title>
+    <link rel="stylesheet" href="{% static 'css/contactus.css' %}">
+    
+</head>
+<script>
+    window.onload=function(){
+    const toggleButton = document.getElementsByClassName('toggle-button')[0]
+    const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+    
+    toggleButton.addEventListener('click', () => {
+      navbarLinks.classList.toggle('active')
+    })
+    }
+    </script>
+
+<body>
+	<div class="container1111">
+		<div class="contact-box1111">
+			<div class="left1111"></div>
+			<div class="right1111">
+                <!-- <img src="../static/images/v331batch2-nunny-05b-leafbackground.jpg" alt=""> -->
+				<h2>Contact Us</h2>
+				<input type="text" class="field1111" placeholder="Your Name">
+				<input type="text" class="field1111" placeholder="Your Email">
+				<input type="text" class="field1111" placeholder="Phone">
+				<textarea placeholder="Message" class="field1111"></textarea>
+				<button class="btn1111">Send</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+
+{% include 'footer.html' %}
+</html>

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% load active %}
+{% load crispy_forms_tags %}
+{% include 'navbar.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Facebook Cards -->
+        <meta property="og:image" content="{% static 'images/logomark.png' %}"/>
+    
+        <!-- Twitter Cards -->
+        <meta name="twitter:image:src" content="{% static 'images/logomark.png' %}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+        <link rel="shortcut icon" href="{% static 'images/logomarkv2.ico' %}">
+        <script>window.onload=function(){
+            const toggleButton = document.getElementsByClassName('toggle-button')[0]
+            const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+            
+            toggleButton.addEventListener('click', () => {
+              navbarLinks.classList.toggle('active')
+            })
+            }
+            </script>
+<body>
+
+    <div class="about-section2">
+        <div class="inner-container2">
+            <h1>About Us</h1>
+            <p class="tex2t">
+                Welcome to Resume filtering, number one source of Resume. We're dedicated to giving you the very best jobs.
+                Resume filtering was born as a result of a job seeker’s frustration.
+                Founded in 2021 by Khushwant Coudhary, Abhishekh Lakhmera ,Anubha Kansal, Divesh Kumawat, and Nalin.
+                Now Resume filtering is not just helping one job seeker, but hundreds of thousands worldwide by building the best tools
+                 to empower job seekers so they can land their dream jobs.
+                
+                We hope you visit our website again and again.
+                We enjoy to offer you our services. If you have any questions or comments, please don't hesitate to contact us.
+                
+                Sincerely            </p>
+        
+        </div>
+    </div>
+
+</body>
+
+</html>
+{% include 'footer.html' %}
